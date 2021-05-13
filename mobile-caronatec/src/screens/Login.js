@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import { ImageBackground, StyleSheet, View } from 'react-native';
-import { Button, Input, Text } from 'react-native-elements';
+import { ImageBackground, KeyboardAvoidingView, TextInput, TouchableOpacity, View, Text, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles/MainStyle';
+import loginStyle from '../styles/LoginStyle'
 
 export default function Login({navigation}) {
 
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
 
+  
   const entrar = () => {
     navigation.reset({
         index: 0,
@@ -20,49 +21,59 @@ export default function Login({navigation}) {
     navigation.navigate("Cadastro")
   }
 
+  const esqueceuSenha = () => {
+    navigation.navigate("EsqueceuSenha")
+  }
+
   const imgbg1 = '../assets/img/BgLogin.png'
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}>
       <ImageBackground
-        source={require(imgbg1)}
-        style={styles.imgFundo}
-      >
-        <Text h2>Bem-vindo</Text>
-        <Text h5>ao CARONATEC</Text>
+          source={require(imgbg1)}
+          style={styles.imgFundo}
+        >
+        <View style={loginStyle.div}>
+          <View style={loginStyle.bemVindoBack}>
+            <Text>Bem-vindo</Text>
+            <Text>ao CARONATEC</Text>
+          </View>
 
-        <Input
-          placeholder="E-mail"
-          leftIcon={{ type: 'font-awesome', name: 'envelope' }}
-          onChangeText={value => setEmail(value)}
-          keyboardType="email-address"
-        />
+          <TextInput
+            style={styles.input}
+            placeholder="E-mail"
+            onChangeText={value => setEmail(value)}
+            autoCorrect={false}
+            keyboardType="email-address"
+          />
 
-        <Input
-          placeholder="Sua senha"
-          leftIcon={{ type: 'font-awesome', name: 'lock' }}
-          onChangeText={value => setPassword(value)}
-          secureTextEntry={true}
-        />
-        
-        <Button
-          title="ENTRAR"
-          onPress={() => entrar()}
-        />
+          <TextInput
+            style={styles.input}
+            placeholder="Sua senha"
+            onChangeText={value => setPassword(value)}
+            autoCorrect={false}
+            secureTextEntry={true}
+          />
+          
+          <Button
+            title="ENTRAR"
+            onPress={() => entrar()}
+          />
 
-        <Text>
-            Esqueceu sua senha? Clique Aqui!
-        </Text>
+          <TouchableOpacity onPress={() => esqueceuSenha()}>
+            <Text>
+                Esqueceu sua senha? Clique Aqui!
+            </Text>
+          </TouchableOpacity>
 
-        <Button
-          title="Cadastrar"
-          onPress={() => cadastrar()}
-        />
-
-        <Text>
-            Não tem Cadastro? Faça agora mesmo!
-        </Text>
+          <TouchableOpacity onPress={() => cadastrar()}>
+            <Text>
+                Não tem Cadastro? Faça agora mesmo!
+            </Text>
+          </TouchableOpacity>
+        </View>
       </ImageBackground>
-    </View>
+    </KeyboardAvoidingView>
   );
 }
+

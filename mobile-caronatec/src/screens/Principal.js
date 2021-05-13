@@ -12,18 +12,26 @@ function Feed() {
   );
 }
 
-function Profile() {
+function history() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
+      <Text>History!</Text>
     </View>
   );
 }
 
-function Notifications() {
+function Carona() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
+      <Text>Carona AREA!</Text>
+    </View>
+  );
+}
+
+function Profile() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Profile AREA!</Text>
     </View>
   );
 }
@@ -35,7 +43,7 @@ export default function Principal() {
     <Tab.Navigator
       initialRouteName="Feed"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: '#7BABFF',
       }}
     >
       <Tab.Screen
@@ -49,12 +57,22 @@ export default function Principal() {
         }}
       />
       <Tab.Screen
-        name="Notifications"
-        component={Notifications}
+        name="Carona"
+        component={Carona}
         options={{
-          tabBarLabel: 'Updates',
+          tabBarLabel: 'Caronas',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={size} />
+            <MaterialCommunityIcons name="car" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="history"
+        component={history}
+        options={{
+          tabBarLabel: 'Histórico',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="history" color={color} size={size} />
           ),
         }}
       />
@@ -62,7 +80,7 @@ export default function Principal() {
         name="Profile"
         component={Profile}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Meu Perfil',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
