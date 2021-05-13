@@ -7,6 +7,11 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    imgFundo: {
+      flex: 1,
+      resizeMode: "cover",
+      width: "100%"
+    }
   });
 
 export default styles
