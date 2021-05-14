@@ -33,11 +33,14 @@ export default function Login({navigation}) {
           source={require(imgbg1)}
           style={styles.imgFundo}
         >
-        <View style={loginStyle.div}>
+        <View style={loginStyle.div1}>
           <View style={loginStyle.bemVindoBack}>
-            <Text>Bem-vindo</Text>
-            <Text>ao CARONATEC</Text>
+            <Text style={loginStyle.bemvindoText}>Bem-vindo</Text>
+            <Text style={loginStyle.caronatecText}>ao CARONATEC</Text>
           </View>
+        </View>
+
+        <View style={loginStyle.div2}>
 
           <TextInput
             style={styles.input}
@@ -49,26 +52,50 @@ export default function Login({navigation}) {
 
           <TextInput
             style={styles.input}
-            placeholder="Sua senha"
+            placeholder="Senha"
             onChangeText={value => setPassword(value)}
             autoCorrect={false}
             secureTextEntry={true}
           />
           
-          <Button
-            title="ENTRAR"
-            onPress={() => entrar()}
-          />
+          <TouchableOpacity 
+            style={styles.btnSubmit}
+            onPress={() => entrar()}>
+            <Text style={styles.txtSubmit}>
+                ENTRAR
+            </Text>
+          </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => esqueceuSenha()}>
-            <Text>
+          <TouchableOpacity 
+            style={styles.btnEsqueceu}
+            onPress={() => esqueceuSenha()}>
+            <Text style={styles.txtEsqueceu}>
                 Esqueceu sua senha? Clique Aqui!
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => cadastrar()}>
-            <Text>
-                Não tem Cadastro? Faça agora mesmo!
+          <View style={{
+            flexDirection: 'row',
+            alignItems: 'center',
+            marginTop: 20,
+            marginBottom: 20,
+            marginLeft: '5%',}}>
+            <View style={{flex: 1, height: 2, backgroundColor: 'white'}} />
+            <View>
+              <Text style={{width: 50, textAlign: 'center', color: 'white', fontWeight:'bold'}}>OU</Text>
+            </View>
+            <View style={{
+              flex: 1,
+              height: 2,
+              backgroundColor: 'white',
+              marginRight: '5%',}} />
+          </View>
+          
+          <TouchableOpacity 
+            style={styles.btnSubmit}
+            onPress={() => cadastrar()}>
+            <Text style={styles.txtSubmit}>
+                CADASTRAR
             </Text>
           </TouchableOpacity>
         </View>

@@ -13,7 +13,7 @@ function MyStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen options={{headerShown: false}} name="Login" component={Login} />
-      <Stack.Screen name="Principal" component={Principal} />
+      <Stack.Screen options={{headerShown: false}} name="Principal" component={Principal} />
       <Stack.Screen name="Cadastro" component={Cadastro} />
       <Stack.Screen name="EsqueceuSenha" component={EsqueceuSenha} />
     </Stack.Navigator>
