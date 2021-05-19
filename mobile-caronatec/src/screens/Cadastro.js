@@ -52,36 +52,6 @@ export default function Cadastro({navigation}) {
             onChangeText={value => setEmail(value)}
         />
 
-<Input
-            placeholder="Nome Completo"
-            onChangeText={value => setEmail(value)}
-        />
-
-<Input
-            placeholder="Nome Completo"
-            onChangeText={value => setEmail(value)}
-        />
-
-<Input
-            placeholder="Nome Completo"
-            onChangeText={value => setEmail(value)}
-        />
-
-<Input
-            placeholder="Nome Completo"
-            onChangeText={value => setEmail(value)}
-        />
-
-<Input
-            placeholder="Nome Completo"
-            onChangeText={value => setEmail(value)}
-        />
-
-<Input
-            placeholder="Nome Completo"
-            onChangeText={value => setEmail(value)}
-        />
-
         <Input
             placeholder="CPF"
             onChangeText={value => setEmail(value)}
