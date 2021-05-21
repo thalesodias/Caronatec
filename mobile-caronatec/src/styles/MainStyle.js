@@ -37,6 +37,12 @@ const styles = StyleSheet.create({
     },
     txtEsqueceu:{
       color: 'white'
+    },
+    picker:{
+      height: 150,
+      color: 'white',
+      marginLeft: '2%',
+      marginRight: '2%',
     }
   });
 
