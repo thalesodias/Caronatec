@@ -28,6 +28,14 @@ function Carona() {
   );
 }
 
+function veiculos() {
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>TESTE 123</Text>
+    </View>
+  );
+}
+
 function Profile() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -73,6 +81,16 @@ export default function Principal() {
           tabBarLabel: 'Histórico',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="history" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Veiculos"
+        component={Feed}
+        options={{
+          tabBarLabel: 'Veiculos',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="car" color={color} size={size} />
           ),
         }}
       />
