@@ -1,13 +1,30 @@
-import * as React from 'react';
-import { Text, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Text, View, AsyncStorage } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { Button } from 'react-native-elements/dist/buttons/Button';
 
-function Feed() {
+function Feed({ navigation }) {
+
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    async function getUser() {
+      let response = await AsyncStorage.getItem('userData');
+      let json = JSON.parse(response);
+      setUser(json.name);
+    }
+    getUser();
+  }, []);
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Feed!</Text>
+      <Text>Seja bem vindo {user}</Text>
+      <Button
+        title="Logout"
+        onPress={() => navigation.navigate('Login')}
+      />
     </View>
   );
 }

@@ -1,19 +1,51 @@
 import React, { useState } from 'react';
-import { ImageBackground, KeyboardAvoidingView, TextInput, TouchableOpacity, View, Text, Button } from 'react-native';
+import { ImageBackground, KeyboardAvoidingView, TextInput, TouchableOpacity, View, Text, Button, AsyncStorage } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles/MainStyle';
 import loginStyle from '../styles/LoginStyle'
 
-export default function Login({navigation}) {
+export default function Login({ navigation }) {
 
+  const [display, setDisplay] = useState('none');
   const [email, setEmail] = useState(null)
   const [password, setPassword] = useState(null)
 
-  
+  //Envio do formulário de login
+  async function sendForm() {
+    let response = await fetch('http://192.168.15.86:3000/login', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password
+      })
+    });
+    let json = await response.json();
+    if (json === 'error') {
+      setDisplay('flex');
+      setTimeout(() => {
+        setDisplay('none');
+      }, 5000);
+      await AsyncStorage.clear();
+    } else {
+      let userData = await AsyncStorage.setItem('userData', JSON.stringify(json));
+      let resData = await AsyncStorage.getItem('userData');
+      console.log(JSON.parse(resData))
+
+      navigation.reset({
+        index: 0,
+        routes: [{ name: "Principal" }]
+      })
+    }
+  }
+
   const entrar = () => {
     navigation.reset({
-        index: 0,
-        routes: [{name: "Principal"}]
+      index: 0,
+      routes: [{ name: "Principal" }]
     })
   }
 
@@ -30,9 +62,9 @@ export default function Login({navigation}) {
   return (
     <KeyboardAvoidingView style={styles.container}>
       <ImageBackground
-          source={require(imgbg1)}
-          style={styles.imgFundo}
-        >
+        source={require(imgbg1)}
+        style={styles.imgFundo}
+      >
         <View style={loginStyle.div1}>
           <View style={loginStyle.bemVindoBack}>
             <Text style={loginStyle.bemvindoText}>Bem-vindo</Text>
@@ -41,6 +73,10 @@ export default function Login({navigation}) {
         </View>
 
         <View style={loginStyle.div2}>
+
+          <View>
+            <Text style={loginStyle.loginMsg(display)}>Usuário ou senha inválidos!</Text>
+          </View>
 
           <TextInput
             style={styles.input}
@@ -57,20 +93,20 @@ export default function Login({navigation}) {
             autoCorrect={false}
             secureTextEntry={true}
           />
-          
-          <TouchableOpacity 
+
+          <TouchableOpacity
             style={styles.btnSubmit}
-            onPress={() => entrar()}>
+            onPress={() => sendForm()}>
             <Text style={styles.txtSubmit}>
-                ENTRAR
+              ENTRAR
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.btnEsqueceu}
             onPress={() => esqueceuSenha()}>
             <Text style={styles.txtEsqueceu}>
-                Esqueceu sua senha? Clique Aqui!
+              Esqueceu sua senha? Clique Aqui!
             </Text>
           </TouchableOpacity>
 
@@ -79,23 +115,25 @@ export default function Login({navigation}) {
             alignItems: 'center',
             marginTop: 20,
             marginBottom: 20,
-            marginLeft: '5%',}}>
-            <View style={{flex: 1, height: 2, backgroundColor: 'white'}} />
+            marginLeft: '5%',
+          }}>
+            <View style={{ flex: 1, height: 2, backgroundColor: 'white' }} />
             <View>
-              <Text style={{width: 50, textAlign: 'center', color: 'white', fontWeight:'bold'}}>OU</Text>
+              <Text style={{ width: 50, textAlign: 'center', color: 'white', fontWeight: 'bold' }}>OU</Text>
             </View>
             <View style={{
               flex: 1,
               height: 2,
               backgroundColor: 'white',
-              marginRight: '5%',}} />
+              marginRight: '5%',
+            }} />
           </View>
-          
-          <TouchableOpacity 
+
+          <TouchableOpacity
             style={styles.btnSubmit}
             onPress={() => cadastrar()}>
             <Text style={styles.txtSubmit}>
-                CADASTRAR
+              CADASTRAR
             </Text>
           </TouchableOpacity>
         </View>
