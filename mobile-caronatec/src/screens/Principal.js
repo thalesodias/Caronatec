@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Button } from 'react-native-elements/dist/buttons/Button';
+import Veiculos from '../screens/Veiculos';
 
 function Feed({ navigation }) {
 
@@ -103,7 +104,7 @@ export default function Principal() {
       />
       <Tab.Screen
         name="Veiculos"
-        component={Feed}
+        component={Veiculos}
         options={{
           tabBarLabel: 'Veiculos',
           tabBarIcon: ({ color, size }) => (

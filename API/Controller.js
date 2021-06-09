@@ -8,10 +8,15 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 let user = models.User;
+let veiculo = models.Vehicle;
 
+// login
 app.post('/login', async (req, res) => {
     let response = await user.findOne({
-        where: { email: req.body.email, password: req.body.password }
+        include: [{// Notice `include` takes an ARRAY
+            model: veiculo
+        }],
+        where: { email: req.body.email, password: req.body.password },
     });
     if (response === null) {
         res.send(JSON.stringify('error'));
@@ -26,7 +31,19 @@ app.post('/cadastro', async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         password: req.body.password,
-        profile_type: req.body.profile_type,
+        // profile_type: req.body.profile_type,
+    });
+});
+
+// criação de veículo no banco
+app.post('/veiculos/cadastro', async (req, res) => {
+    await veiculo.create({
+        marca: req.body.marca,
+        modelo: req.body.modelo,
+        placa: req.body.placa,
+        cor: req.body.cor,
+        ano: req.body.ano,
+        userId: req.body.userId,
     });
 });
 
