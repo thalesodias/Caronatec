@@ -21,6 +21,16 @@ const styles = StyleSheet.create({
       marginLeft: '10%',
       marginRight: '10%'
     },
+    switch:{
+      width: '80%',
+      marginBottom: 20,
+      borderRadius: 15,
+      fontSize: 20,
+      textAlign: 'center',
+      padding: 10,
+      marginLeft: '10%',
+      marginRight: '10%'
+    },
     btnSubmit:{
       backgroundColor: '#005DFF',
       width: '80%',

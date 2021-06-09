@@ -3,6 +3,7 @@ import { KeyboardAvoidingView, Platform, StyleSheet, View, TextInput, TouchableO
 import { Button, CheckBox, Input, Text } from 'react-native-elements';
 import { Picker } from '@react-native-picker/picker';
 import { ScrollView } from 'react-native-gesture-handler';
+import SwitchSelector from "react-native-switch-selector";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles/MainStyle';
 import cadastroStyle from '../styles/CadastroStyle';
@@ -22,7 +23,7 @@ export default function Cadastro({ navigation }) {
                 { text: "OK" }
             ]
         );
-        let response = await fetch('http://192.168.15.86:3000/cadastro', {
+        let response = await fetch('http://192.168.1.110:3000/cadastro', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -57,6 +58,11 @@ export default function Cadastro({ navigation }) {
         navigation.navigate("Login")
     }
 
+    const options = [
+        { label: "Passageiro", value: "1" },
+        { label: "Motorista", value: "2" }
+      ];
+
     return (
         <KeyboardAvoidingView
             behavior={Platform.OS == "ios" ? "padding" : "height"}
@@ -70,13 +76,14 @@ export default function Cadastro({ navigation }) {
                     </View>
                 </View>
 
-                <TextInput
-                    style={styles.input}
-                    placeholder="FALTA O SWITCH AQUI"
-                    onChangeText={value => setEmail(value)}
-                    keyboardType="number-pad"
-                    returnKeyType="done"
-                />
+                <View style={styles.switch}>
+                <SwitchSelector
+                    options={options}
+                    initial={0}
+                    onPress={value => console.log(`Call onPress with value: ${value}`)}
+                    buttonColor='#005DFF'
+                    />
+                </View>
 
                 <TextInput
                     style={styles.input}
