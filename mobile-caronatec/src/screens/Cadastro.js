@@ -23,7 +23,7 @@ export default function Cadastro({ navigation }) {
                 { text: "OK" }
             ]
         );
-        let response = await fetch('http://192.168.1.110:3000/cadastro', {
+        let response = await fetch('http://192.168.15.86:3000/cadastro', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -32,7 +32,8 @@ export default function Cadastro({ navigation }) {
             body: JSON.stringify({
                 name: nome,
                 email: email,
-                password: senha
+                password: senha,
+                tipo: tipo
             })
         });
     }
@@ -42,6 +43,7 @@ export default function Cadastro({ navigation }) {
     const [confSenha, setConfSenha] = useState(null)
     const [nome, setNome] = useState(null)
     const [cpf, setCpf] = useState(null)
+    const [tipo, setTipo] = useState(null)
     const [curso, setCurso] = useState(null)
     const [isSelected, setSelected] = useState(false)
 
@@ -80,7 +82,8 @@ export default function Cadastro({ navigation }) {
                 <SwitchSelector
                     options={options}
                     initial={0}
-                    onPress={value => console.log(`Call onPress with value: ${value}`)}
+                    // onPress={value => console.log(`Call onPress with value: ${value}`)}
+                    onPress={value => setTipo(value)}
                     buttonColor='#005DFF'
                     />
                 </View>

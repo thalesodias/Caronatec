@@ -38,7 +38,7 @@ export default function Veiculos({ navigation }) {
                 { text: "OK" }
             ]
         );
-        let response = await fetch('http://192.168.1.110:3000/veiculos/cadastro', {
+        let response = await fetch('http://192.168.15.86:3000/veiculos/cadastro', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

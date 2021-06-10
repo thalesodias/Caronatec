@@ -8,6 +8,28 @@ import Veiculos from '../screens/Veiculos';
 
 function Feed({ navigation }) {
 
+  const fexibir = (valor) => {
+    if (valor == 1) {
+      return (
+        <Text>Passageiro</Text>
+      )
+    } else {
+      return (
+        <Text>Motorista</Text>
+      )
+    }
+  }
+
+  const [tipo, setTipo] = useState(null);
+  useEffect(() => {
+    async function getTipo() {
+      let response = await AsyncStorage.getItem('userData');
+      let json = JSON.parse(response);
+      setTipo(json.profile_type);
+    }
+    getTipo();
+  }, []);
+
   const [user, setUser] = useState(null);
   useEffect(() => {
     async function getUser() {
@@ -22,6 +44,7 @@ function Feed({ navigation }) {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>Feed!</Text>
       <Text>Seja bem vindo {user}</Text>
+      {fexibir(tipo)}
       <Button
         title="Logout"
         onPress={() => navigation.navigate('Login')}
@@ -65,6 +88,34 @@ function Profile() {
 const Tab = createBottomTabNavigator();
 
 export default function Principal() {
+
+  const mostraVeiculos = (valor) => {
+    if (valor == 2) {
+      return (
+        <Tab.Screen
+          name="Veiculos"
+          component={Veiculos}
+          options={{
+            tabBarLabel: 'Veiculos',
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="car" color={color} size={size} />
+            ),
+          }}
+        />
+      )
+    }
+  }
+
+  const [tipo, setTipo] = useState(null);
+  useEffect(() => {
+    async function getTipo() {
+      let response = await AsyncStorage.getItem('userData');
+      let json = JSON.parse(response);
+      setTipo(json.profile_type);
+    }
+    getTipo();
+  }, []);
+
   return (
     <Tab.Navigator
       initialRouteName="Feed"
@@ -102,16 +153,7 @@ export default function Principal() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Veiculos"
-        component={Veiculos}
-        options={{
-          tabBarLabel: 'Veiculos',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="car" color={color} size={size} />
-          ),
-        }}
-      />
+      {mostraVeiculos(tipo)}
       <Tab.Screen
         name="Profile"
         component={Profile}
