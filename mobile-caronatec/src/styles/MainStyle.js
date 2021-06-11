@@ -21,6 +21,18 @@ const styles = StyleSheet.create({
       marginLeft: '10%',
       marginRight: '10%'
     },
+    inputSear:{
+      backgroundColor: '#fff',
+      width: '80%',
+      marginBottom: 20,
+      borderRadius: 15,
+      fontSize: 20,
+      textAlign: 'center',
+      padding: 10,
+      marginLeft: '10%',
+      marginRight: '10%',
+      marginTop: '10%'
+    },
     switch:{
       width: '80%',
       marginBottom: 20,
