@@ -43,6 +43,7 @@ export default function Cadastro({ navigation }) {
     const [confSenha, setConfSenha] = useState(null)
     const [nome, setNome] = useState(null)
     const [cpf, setCpf] = useState(null)
+    const [cnh, setCnh] = useState(null)
     const [tipo, setTipo] = useState(null)
     const [curso, setCurso] = useState(null)
     const [isSelected, setSelected] = useState(false)
@@ -63,7 +64,7 @@ export default function Cadastro({ navigation }) {
     const options = [
         { label: "Passageiro", value: "1" },
         { label: "Motorista", value: "2" }
-      ];
+    ];
 
     return (
         <KeyboardAvoidingView
@@ -79,12 +80,12 @@ export default function Cadastro({ navigation }) {
                 </View>
 
                 <View style={styles.switch}>
-                <SwitchSelector
-                    options={options}
-                    initial={0}
-                    // onPress={value => console.log(`Call onPress with value: ${value}`)}
-                    onPress={value => setTipo(value)}
-                    buttonColor='#005DFF'
+                    <SwitchSelector
+                        options={options}
+                        initial={0}
+                        // onPress={value => console.log(`Call onPress with value: ${value}`)}
+                        onPress={value => setTipo(value)}
+                        buttonColor='#005DFF'
                     />
                 </View>
 
@@ -122,6 +123,16 @@ export default function Cadastro({ navigation }) {
                     keyboardType="number-pad"
                     returnKeyType="done"
                 />
+
+                {tipo == 2 ? (
+                    <TextInput
+                    style={styles.input}
+                    placeholder="CNH"
+                    onChangeText={value => setCnh(value)}
+                    keyboardType="number-pad"
+                    returnKeyType="done"
+                />
+                ) : null}
 
                 <Picker
                     itemStyle={styles.picker}

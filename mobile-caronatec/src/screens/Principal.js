@@ -77,11 +77,11 @@ function history() {
             <View>
               <Text style={{ fontWeight: 'bold'}}>Thales Oliveira Dias</Text>
                 <View style={{ flexDirection: 'row'}}>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star-half' size= '20' color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star-half' size= {20} color= '#FECC00'/>
                 </View>
             </View>
           </View>
@@ -92,7 +92,7 @@ function history() {
           <Text>Local de encontro: Em frente ao Homer</Text>
         </View>
         <View style={{flexDirection: 'row-reverse'}}>
-          <Icon name='plus' size= '20'/>
+          <Icon name='plus' size= {20}/>
         </View>
       </Card>
 
@@ -106,11 +106,11 @@ function history() {
             <View>
               <Text style={{ fontWeight: 'bold'}}>Matheus Nogueira</Text>
                 <View style={{ flexDirection: 'row'}}>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star-half' size= '20' color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star-half' size= {20} color= '#FECC00'/>
                 </View>
             </View>
           </View>
@@ -121,7 +121,7 @@ function history() {
           <Text>Local de encontro: Em frente ao Homer</Text>
         </View>
         <View style={{flexDirection: 'row-reverse'}}>
-          <Icon name='plus' size= '20'/>
+          <Icon name='plus' size= {20}/>
         </View>
       </Card>
 
@@ -135,11 +135,11 @@ function history() {
             <View>
               <Text style={{ fontWeight: 'bold'}}>Marcilio Farias</Text>
                 <View style={{ flexDirection: 'row'}}>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star-half' size= '20' color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star-half' size= {20} color= '#FECC00'/>
                 </View>
             </View>
           </View>
@@ -150,7 +150,7 @@ function history() {
           <Text>Local de encontro: Em frente ao Homer</Text>
         </View>
         <View style={{flexDirection: 'row-reverse'}}>
-          <Icon name='plus' size= '20'/>
+          <Icon name='plus' size= {20}/>
         </View>
       </Card>
 
@@ -164,11 +164,11 @@ function history() {
             <View>
               <Text style={{ fontWeight: 'bold'}}>Thales Oliveira Dias</Text>
                 <View style={{ flexDirection: 'row'}}>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star-half' size= '20' color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star-half' size= {20} color= '#FECC00'/>
                 </View>
             </View>
           </View>
@@ -179,7 +179,7 @@ function history() {
           <Text>Local de encontro: Em frente ao Homer</Text>
         </View>
         <View style={{flexDirection: 'row-reverse'}}>
-          <Icon name='plus' size= '20'/>
+          <Icon name='plus' size= {20}/>
         </View>
       </Card>
       </ScrollView>
@@ -206,11 +206,11 @@ function Carona() {
             <View>
               <Text style={{ fontWeight: 'bold'}}>Thales Oliveira Dias</Text>
                 <View style={{ flexDirection: 'row'}}>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star-half' size= '20' color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star-half' size= {20} color= '#FECC00'/>
                 </View>
             </View>
           </View>
@@ -221,7 +221,7 @@ function Carona() {
           <Text>Local de encontro: Em frente ao Homer</Text>
         </View>
         <View style={{flexDirection: 'row-reverse'}}>
-          <Icon name='plus' size= '20'/>
+          <Icon name='plus' size= {20}/>
         </View>
       </Card>
 
@@ -235,11 +235,11 @@ function Carona() {
             <View>
               <Text style={{ fontWeight: 'bold'}}>Matheus Nogueira</Text>
                 <View style={{ flexDirection: 'row'}}>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star-half' size= '20' color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star-half' size= {20} color= '#FECC00'/>
                 </View>
             </View>
           </View>
@@ -250,7 +250,7 @@ function Carona() {
           <Text>Local de encontro: Em frente ao Homer</Text>
         </View>
         <View style={{flexDirection: 'row-reverse'}}>
-          <Icon name='plus' size= '20'/>
+          <Icon name='plus' size= {20}/>
         </View>
       </Card>
 
@@ -264,11 +264,11 @@ function Carona() {
             <View>
               <Text style={{ fontWeight: 'bold'}}>Marcilio Farias</Text>
                 <View style={{ flexDirection: 'row'}}>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star-half' size= '20' color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star-half' size= {20} color= '#FECC00'/>
                 </View>
             </View>
           </View>
@@ -279,7 +279,7 @@ function Carona() {
           <Text>Local de encontro: Em frente ao Homer</Text>
         </View>
         <View style={{flexDirection: 'row-reverse'}}>
-          <Icon name='plus' size= '20'/>
+          <Icon name='plus' size= {20}/>
         </View>
       </Card>
 
@@ -293,11 +293,11 @@ function Carona() {
             <View>
               <Text style={{ fontWeight: 'bold'}}>Thales Oliveira Dias</Text>
                 <View style={{ flexDirection: 'row'}}>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star' size= '20' color= '#FECC00'/>
-                  <Icon name='star-half' size= '20' color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star' size= {20} color= '#FECC00'/>
+                  <Icon name='star-half' size= {20} color= '#FECC00'/>
                 </View>
             </View>
           </View>
@@ -308,7 +308,7 @@ function Carona() {
           <Text>Local de encontro: Em frente ao Homer</Text>
         </View>
         <View style={{flexDirection: 'row-reverse'}}>
-          <Icon name='plus' size= '20'/>
+          <Icon name='plus' size= {20}/>
         </View>
       </Card>
       </ScrollView>
