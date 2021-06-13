@@ -33,7 +33,9 @@ export default function Cadastro({ navigation }) {
                 name: nome,
                 email: email,
                 password: senha,
-                tipo: tipo
+                tipo: tipo,
+                cpf: cpf,
+                cnh: cnh,
             })
         });
     }

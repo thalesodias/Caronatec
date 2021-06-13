@@ -32,6 +32,8 @@ app.post('/cadastro', async (req, res) => {
         email: req.body.email,
         password: req.body.password,
         profile_type: req.body.tipo,
+        cpf: req.body.cpf,
+        cnh: req.body.cnh,
     });
 });
 

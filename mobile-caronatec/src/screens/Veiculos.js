@@ -57,7 +57,7 @@ export default function Veiculos({ navigation }) {
 
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#7BABFF' }}>
-            <Text>Meu veículo</Text>
+            <Text style={styles.title}>Meu veículo</Text>
 
             <TextInput
                 style={styles.input}
