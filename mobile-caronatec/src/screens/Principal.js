@@ -47,14 +47,201 @@ function Feed({ navigation }) {
   }, []);
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
-      <Text>Seja bem vindo {user}</Text>
-      {fexibir(tipo)}
-      <Button
-        title="Logout"
-        onPress={() => navigation.navigate('Login')}
-      />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#7BABFF' }}>
+      <View style={{ height: '60%', width: '100%', backgroundColor: '#9dc1ff' }}>
+        <SafeAreaView>
+          <View style={{ flexDirection: 'row', marginTop: 30, marginBottom: 10, marginLeft: 20 }}>
+            <Icon name='car' size={30} />
+            <Text style={{ fontSize: 20, fontWeight: 'bold', marginLeft: 5, marginTop: 3 }}>
+              Minhas Caronas:
+            </Text>
+          </View>
+          <ScrollView style={{ marginBottom: '20%' }}>
+            <Card style={{ padding: 10, margin: 10 }}>
+              <View style={{ paddingTop: 10 }}>
+                <View style={{ flexDirection: 'row' }}>
+                  <Image
+                    style={{ width: 70, height: 70, marginRight: 20, marginBottom: 15 }}
+                    source={require('../assets/img/thales-user.png')}
+                  />
+                  <View>
+                    <Text style={{ fontWeight: 'bold' }}>Thales Oliveira Dias</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star-half' size={20} color='#FECC00' />
+                    </View>
+                  </View>
+                </View>
+
+                <Text>Destino: Vila Zélia [Lorena - SP]</Text>
+                <Text>Saida: FATEC</Text>
+                <Text>Sai às: 23:00     Tolerancia: 15 min</Text>
+                <Text>Local de encontro: Em frente ao Homer</Text>
+              </View>
+              <View style={{ flexDirection: 'row-reverse' }}>
+                <Icon name='plus' size={20} />
+              </View>
+            </Card>
+
+            <Card style={{ padding: 10, margin: 10 }}>
+              <View style={{ paddingTop: 10 }}>
+                <View style={{ flexDirection: 'row' }}>
+                  <Image
+                    style={{ width: 70, height: 70, marginRight: 20, marginBottom: 15 }}
+                    source={require('../assets/img/matheus-user.png')}
+                  />
+                  <View>
+                    <Text style={{ fontWeight: 'bold' }}>Matheus Nogueira</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star-half' size={20} color='#FECC00' />
+                    </View>
+                  </View>
+                </View>
+
+                <Text>Destino: Vila Zélia [Lorena - SP]</Text>
+                <Text>Saida: FATEC</Text>
+                <Text>Sai às: 23:00     Tolerancia: 15 min</Text>
+                <Text>Local de encontro: Em frente ao Homer</Text>
+              </View>
+              <View style={{ flexDirection: 'row-reverse' }}>
+                <Icon name='plus' size={20} />
+              </View>
+            </Card>
+
+            <Card style={{ padding: 10, margin: 10 }}>
+              <View style={{ paddingTop: 10 }}>
+                <View style={{ flexDirection: 'row' }}>
+                  <Image
+                    style={{ width: 70, height: 70, marginRight: 20, marginBottom: 15 }}
+                    source={require('../assets/img/marcilio-user.png')}
+                  />
+                  <View>
+                    <Text style={{ fontWeight: 'bold' }}>Marcilio Farias</Text>
+                    <View style={{ flexDirection: 'row' }}>
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star' size={20} color='#FECC00' />
+                      <Icon name='star-half' size={20} color='#FECC00' />
+                    </View>
+                  </View>
+                </View>
+
+                <Text>Destino: Vila Zélia [Lorena - SP]</Text>
+                <Text>Saida: FATEC</Text>
+                <Text>Sai às: 23:00     Tolerancia: 15 min</Text>
+                <Text>Local de encontro: Em frente ao Homer</Text>
+              </View>
+              <View style={{ flexDirection: 'row-reverse' }}>
+                <Icon name='plus' size={20} />
+              </View>
+            </Card>
+          </ScrollView>
+        </SafeAreaView>
+      </View>
+      <View style={{ height: '40%', width: '100%', marginTop: '2%', backgroundColor: '#9dc1ff' }}>
+        <View style={{ flexDirection: 'row', marginTop: 30, marginBottom: 10, marginLeft: 20 }}>
+          <Icon name='history' size={30} />
+          <Text style={{ fontSize: 20, fontWeight: 'bold', marginLeft: 5, marginTop: 3 }}>
+            Histórico:
+            </Text>
+        </View>
+        <ScrollView>
+          <Card style={{ padding: 10, margin: 10 }}>
+            <View style={{ paddingTop: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <Image
+                  style={{ width: 70, height: 70, marginRight: 20, marginBottom: 15 }}
+                  source={require('../assets/img/thales-user.png')}
+                />
+                <View>
+                  <Text style={{ fontWeight: 'bold' }}>Thales Oliveira Dias</Text>
+                  <View style={{ flexDirection: 'row' }}>
+                    <TouchableOpacity>
+                      <Text style={{ color: 'blue', marginTop: 5, textDecorationLine: 'underline' }}>
+                        Clique aqui para avaliar o motorista!
+                    </Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+
+              <Text>Destino: Vila Zélia [Lorena - SP]</Text>
+              <Text>Saida: FATEC</Text>
+              <Text>Sai às: 23:00     Tolerancia: 15 min</Text>
+              <Text>Local de encontro: Em frente ao Homer</Text>
+            </View>
+            <View style={{ flexDirection: 'row-reverse' }}>
+              <Icon name='plus' size={20} />
+            </View>
+          </Card>
+
+          <Card style={{ padding: 10, margin: 10 }}>
+            <View style={{ paddingTop: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <Image
+                  style={{ width: 70, height: 70, marginRight: 20, marginBottom: 15 }}
+                  source={require('../assets/img/matheus-user.png')}
+                />
+                <View>
+                  <Text style={{ fontWeight: 'bold' }}>Matheus Nogueira</Text>
+                  <View style={{ flexDirection: 'row' }}>
+                    <TouchableOpacity>
+                      <Text style={{ color: 'blue', marginTop: 5, textDecorationLine: 'underline' }}>
+                        Clique aqui para avaliar o motorista!
+                    </Text>
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              </View>
+
+              <Text>Destino: Vila Zélia [Lorena - SP]</Text>
+              <Text>Saida: FATEC</Text>
+              <Text>Sai às: 23:00     Tolerancia: 15 min</Text>
+              <Text>Local de encontro: Em frente ao Homer</Text>
+            </View>
+            <View style={{ flexDirection: 'row-reverse' }}>
+              <Icon name='plus' size={20} />
+            </View>
+          </Card>
+
+          <Card style={{ padding: 10, margin: 10 }}>
+            <View style={{ paddingTop: 10 }}>
+              <View style={{ flexDirection: 'row' }}>
+                <Image
+                  style={{ width: 70, height: 70, marginRight: 20, marginBottom: 15 }}
+                  source={require('../assets/img/marcilio-user.png')}
+                />
+                <View>
+                  <Text style={{ fontWeight: 'bold' }}>Marcilio Farias</Text>
+                  <View style={{ flexDirection: 'row' }}>
+                    <Icon name='star' size={20} color='#FECC00' />
+                    <Icon name='star' size={20} color='#FECC00' />
+                    <Icon name='star' size={20} color='#FECC00' />
+                    <Icon name='star' size={20} color='#FECC00' />
+                    <Icon name='star-half' size={20} color='#FECC00' />
+                  </View>
+                </View>
+              </View>
+
+              <Text>Destino: Vila Zélia [Lorena - SP]</Text>
+              <Text>Saida: FATEC</Text>
+              <Text>Sai às: 23:00     Tolerancia: 15 min</Text>
+              <Text>Local de encontro: Em frente ao Homer</Text>
+            </View>
+            <View style={{ flexDirection: 'row-reverse' }}>
+              <Icon name='plus' size={20} />
+            </View>
+          </Card>
+        </ScrollView>
+      </View>
     </View>
   );
 }
@@ -62,11 +249,12 @@ function Feed({ navigation }) {
 function history() {
   return (
     <SafeAreaView style={{ flex: 1, paddingTop: '30%', alignItems: 'center', backgroundColor: '#7BABFF' }}>
-      <TextInput
-        style={styles.inputSear}
-        placeholder="Pesquisar"
-        autoCorrect={false}
-      />
+      <View style={{ flexDirection: 'row', marginTop: 20, marginBottom: 20 }}>
+        <Icon name='history' size={30} />
+        <Text style={{ fontSize: 20, fontWeight: 'bold', marginLeft: 5, marginTop: 3 }}>
+          Histórico
+        </Text>
+      </View>
       <ScrollView>
         <Card style={{ padding: 10, margin: 10 }}>
           <View style={{ paddingTop: 10 }}>
@@ -78,11 +266,11 @@ function history() {
               <View>
                 <Text style={{ fontWeight: 'bold' }}>Thales Oliveira Dias</Text>
                 <View style={{ flexDirection: 'row' }}>
-                  <Icon name='star' size={20} color='#FECC00' />
-                  <Icon name='star' size={20} color='#FECC00' />
-                  <Icon name='star' size={20} color='#FECC00' />
-                  <Icon name='star' size={20} color='#FECC00' />
-                  <Icon name='star-half' size={20} color='#FECC00' />
+                  <TouchableOpacity>
+                    <Text style={{ color: 'blue', marginTop: 5, textDecorationLine: 'underline' }}>
+                      Clique aqui para avaliar o motorista!
+                    </Text>
+                  </TouchableOpacity>
                 </View>
               </View>
             </View>
@@ -107,11 +295,11 @@ function history() {
               <View>
                 <Text style={{ fontWeight: 'bold' }}>Matheus Nogueira</Text>
                 <View style={{ flexDirection: 'row' }}>
-                  <Icon name='star' size={20} color='#FECC00' />
-                  <Icon name='star' size={20} color='#FECC00' />
-                  <Icon name='star' size={20} color='#FECC00' />
-                  <Icon name='star' size={20} color='#FECC00' />
-                  <Icon name='star-half' size={20} color='#FECC00' />
+                  <TouchableOpacity>
+                    <Text style={{ color: 'blue', marginTop: 5, textDecorationLine: 'underline' }}>
+                      Clique aqui para avaliar o motorista!
+                    </Text>
+                  </TouchableOpacity>
                 </View>
               </View>
             </View>
