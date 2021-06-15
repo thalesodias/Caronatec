@@ -9,6 +9,7 @@ import Veiculos from '../screens/Veiculos';
 import Profile from '../screens/Profile';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input } from 'react-native-elements';
+import config from '../../config/config.json'
 
 import styles from '../styles/MainStyle';
 
@@ -151,7 +152,7 @@ function Feed({ navigation }) {
           <Icon name='history' size={30} />
           <Text style={{ fontSize: 20, fontWeight: 'bold', marginLeft: 5, marginTop: 3 }}>
             Histórico:
-            </Text>
+          </Text>
         </View>
         <ScrollView>
           <Card style={{ padding: 10, margin: 10 }}>
@@ -167,7 +168,7 @@ function Feed({ navigation }) {
                     <TouchableOpacity>
                       <Text style={{ color: 'blue', marginTop: 5, textDecorationLine: 'underline' }}>
                         Clique aqui para avaliar o motorista!
-                    </Text>
+                      </Text>
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -196,7 +197,7 @@ function Feed({ navigation }) {
                     <TouchableOpacity>
                       <Text style={{ color: 'blue', marginTop: 5, textDecorationLine: 'underline' }}>
                         Clique aqui para avaliar o motorista!
-                    </Text>
+                      </Text>
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -399,16 +400,19 @@ function Carona() {
           </Text>
         </TouchableOpacity >
       )
+    } else {
+      return (
+        <TextInput
+          style={styles.inputSear}
+          placeholder="Pesquisar"
+          autoCorrect={false}
+        />
+      )
     }
   }
 
   return (
     <SafeAreaView style={{ flex: 1, paddingTop: '30%', alignItems: 'center', backgroundColor: '#7BABFF' }}>
-      <TextInput
-        style={styles.inputSear}
-        placeholder="Pesquisar"
-        autoCorrect={false}
-      />
 
       {mostraBotao(tipo)}
 

@@ -41,6 +41,9 @@ export default function Profile({ navigation }) {
         setEmail(json.email)
         setNome(json.name)
         setType(json.profile_type)
+        setPassword(json.password)
+        setCpf(json.cpf)
+        setCnh(json.cnh)
     }
 
     return (
@@ -68,6 +71,7 @@ export default function Profile({ navigation }) {
                 placeholder="Senha"
                 onChangeText={value => setPassword(value)}
                 autoCorrect={false}
+                secureTextEntry={true}
                 value={senha}
             />
 

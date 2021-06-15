@@ -8,6 +8,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles/MainStyle';
 import cadastroStyle from '../styles/CadastroStyle';
 import color from 'color';
+import config from '../../config/config.json'
 
 export default function Cadastro({ navigation }) {
 
@@ -23,7 +24,7 @@ export default function Cadastro({ navigation }) {
                 { text: "OK" }
             ]
         );
-        let response = await fetch('http://192.168.1.110:3000/cadastro', {
+        let response = await fetch(config.urlRoot + 'cadastro', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

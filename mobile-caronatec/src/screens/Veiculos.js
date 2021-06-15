@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text, View, Button, TextInput, TouchableOpacity, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../styles/MainStyle';
+import config from '../../config/config.json'
 
 export default function Veiculos({ navigation }) {
 
@@ -38,7 +39,7 @@ export default function Veiculos({ navigation }) {
                 { text: "OK" }
             ]
         );
-        let response = await fetch('http://192.168.1.110:3000/veiculos/cadastro', {
+        let response = await fetch(config.urlRoot + 'veiculos/cadastro', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',
@@ -53,7 +54,7 @@ export default function Veiculos({ navigation }) {
                 userId: user,
             })
         });
-    }    
+    }
 
     return (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#7BABFF' }}>
@@ -63,7 +64,7 @@ export default function Veiculos({ navigation }) {
                 style={styles.input}
                 placeholder="Marca"
                 onChangeText={value => setMarca(value)}
-                autoCorrect={false}                
+                autoCorrect={false}
             />
 
             <TextInput
@@ -99,7 +100,7 @@ export default function Veiculos({ navigation }) {
                 onPress={() => sendForm()}>
                 <Text style={styles.txtSubmit}>
                     SALVAR
-            </Text>
+                </Text>
             </TouchableOpacity>
 
         </View>
