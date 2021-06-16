@@ -3,6 +3,7 @@ import { KeyboardAvoidingView, Platform, StyleSheet, View, TextInput, TouchableO
 import { Button, CheckBox, Input, Text } from 'react-native-elements';
 import { Picker } from '@react-native-picker/picker';
 import { ScrollView } from 'react-native-gesture-handler';
+import { TextInputMask } from 'react-native-masked-text'
 import SwitchSelector from "react-native-switch-selector";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../styles/MainStyle';
@@ -51,6 +52,7 @@ export default function Cadastro({ navigation }) {
     const [curso, setCurso] = useState(null)
     const [isSelected, setSelected] = useState(false)
 
+    let cpfField = null
 
     const salvar = () => {
         console.log("Salvou")
@@ -119,14 +121,16 @@ export default function Cadastro({ navigation }) {
                     onChangeText={value => setNome(value)}
                 />
 
-                <TextInput
-                    style={styles.input}
+                <TextInputMask
                     placeholder="CPF"
-                    onChangeText={value => setCpf(value)}
+                    type={'cpf'}
+                    value={cpf}
                     keyboardType="number-pad"
                     returnKeyType="done"
+                    style={styles.input}
+                    onChangeText={value => setCpf(value)}
                 />
-
+ 
                 {tipo == 2 ? (
                     <TextInput
                     style={styles.input}

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Text, View, Button, TextInput, TouchableOpacity, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TextInputMask } from 'react-native-masked-text'
+
 import styles from '../styles/MainStyle';
 import { renderNode } from 'react-native-elements/dist/helpers';
 
@@ -75,12 +77,14 @@ export default function Profile({ navigation }) {
                 value={senha}
             />
 
-            <TextInput
-                style={styles.input}
+            <TextInputMask
                 placeholder="CPF"
-                onChangeText={value => setCpf(value)}
-                autoCorrect={false}
+                type={'cpf'}
                 value={cpf}
+                keyboardType="number-pad"
+                returnKeyType="done"
+                style={styles.input}
+                onChangeText={value => setCpf(value)}
             />
 
             {fexibir(type)}
