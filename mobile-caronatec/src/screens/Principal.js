@@ -1,5 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Text, View, AsyncStorage, TextInput, KeyboardAvoidingView, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { Text,
+   View,
+   AsyncStorage,
+   TextInput,
+   KeyboardAvoidingView,
+   SafeAreaView,
+   ScrollView,
+   Image,
+   TouchableOpacity,
+   Alert,
+   Modal,
+   StyleSheet,
+   TouchableHighlight
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
@@ -380,6 +393,8 @@ function history() {
 function Carona() {
 
   const [tipo, setTipo] = useState(null);
+  
+  const [modalVisible, setModalVisible] = useState(false);
   useEffect(() => {
     async function getTipo() {
       let response = await AsyncStorage.getItem('userData');
@@ -393,7 +408,10 @@ function Carona() {
     if (valor == 2) {
       return (
         <TouchableOpacity
-          style={styles.btnSubmit}
+          onPress={() => {
+          setModalVisible(!modalVisible);
+          }}
+          style={[styles.btnSubmit, {marginTop: 20}]}
         >
           <Text style={styles.txtSubmit}>
             CADASTRAR CARONA
@@ -415,6 +433,82 @@ function Carona() {
     <SafeAreaView style={{ flex: 1, paddingTop: '30%', alignItems: 'center', backgroundColor: '#7BABFF' }}>
 
       {mostraBotao(tipo)}
+
+      <View style={estilos.centeredView}>
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert('Modal has been closed.');
+        }}>
+        <View style={estilos.centeredView}>
+          <View style={estilos.modalView}>
+            <View style={{width:'100%'}}>
+              <View style={{flexDirection:'row', alignItems:'center', justifyContent: 'center',}}>
+                <Icon name='car' size={30} style={{marginTop:20}} />
+                <Text style={estilos.modalText}>  Cadastrar Carona:  </Text>
+              </View>
+              <View>
+                <TextInput
+                  style={[styles.input]}
+                  placeholderTextColor='#939393'
+                  placeholder="Data"
+                  autoCorrect={false}
+                  keyboardType='number-pad'
+                  returnKeyType="done"
+                />
+                <TextInput
+                  style={[styles.input]}
+                  placeholderTextColor='#939393'
+                  placeholder="Local de partida"
+                  autoCorrect={false}
+                  returnKeyType="done"
+                />
+                <TextInput
+                  style={[styles.input]}
+                  placeholderTextColor='#939393'
+                  placeholder="Local de chegada"
+                  autoCorrect={false}
+                  returnKeyType="done"
+                />
+                <TextInput
+                  style={[styles.input]}
+                  placeholderTextColor='#939393'
+                  placeholder="Vagas"
+                  autoCorrect={false}
+                  keyboardType='number-pad'
+                  returnKeyType="done"
+                />
+                <TextInput
+                  style={[styles.input]}
+                  placeholderTextColor='#939393'
+                  placeholder="Valor por pessoa"
+                  autoCorrect={false}
+                  keyboardType='numeric'
+                  returnKeyType="done"
+                />
+                <TextInput
+                  style={[styles.input]}
+                  placeholderTextColor='#939393'
+                  placeholder="Descrição"
+                  autoCorrect={false}
+                  returnKeyType="done"
+                />
+              </View>
+            </View>
+
+            <TouchableHighlight
+              style={styles.btnSubmit}
+              onPress={() => {
+                setModalVisible(!modalVisible);
+              }}>
+              <Text style={[estilos.textStyle, {fontSize: 20}]}>Cadastrar</Text>
+            </TouchableHighlight>
+          </View>
+        </View>
+      </Modal>
+    </View>
 
       <ScrollView>
         <Card style={{ padding: 10, margin: 10 }}>
@@ -537,15 +631,51 @@ function Carona() {
   );
 }
 
-function veiculos() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>TESTE 123</Text>
-    </View>
-  );
-}
-
 const Tab = createBottomTabNavigator();
+
+const estilos = StyleSheet.create({
+  centeredView: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 22,
+  },
+  modalView: {
+    backgroundColor: '#7BABFF',
+    borderColor: 'white',
+    borderWidth: 5,
+    borderRadius: 20,
+    width: '95%',
+    height: '75%',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
+  openButton: {
+    backgroundColor: '#F194FF',
+    borderRadius: 20,
+    padding: 10,
+    elevation: 2,
+  },
+  textStyle: {
+    color: 'white',
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  modalText: {
+    marginTop: '10%',
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginBottom: 15,
+    textAlign: 'center',
+  },
+});
 
 export default function Principal() {
 
