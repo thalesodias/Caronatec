@@ -31,7 +31,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="https://github.com/matheusnog">
-        <img src="https://i.imgur.com/alARznM.jpg"/><br>
+        <img src=https://i.imgur.com/alARznM.jpg" width="100px;"/><br>
         <sub>
           <b>Matheus Nogueira</b>
         </sub>
@@ -47,9 +47,11 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
   </tr>
 </table>
+                                                                 
+## 📎 Link do projeto
 
+Projeto CARONATEC - (https://github.com/thalesodias/Caronatec)
+                                                                 
 ## 📝 Licença
 
 Esse projeto está sob licença.
-
-[⬆ Voltar ao topo](#CARONATEC)<br>
