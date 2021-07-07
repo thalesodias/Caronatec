@@ -1,7 +1,5 @@
 # CARONATEC
 
-<img src="exemplo-image.png" alt="exemplo imagem">
-
 > O objetivo do CARONATEC é facilitar o transporte para os estudantes da Fatec Guaratinguetá, pois através de um sistema web ou aplicativo, onde o estudante poderá visualizar outros estudantes motoristas que estiverem oferecendo carona, que pode ser gratuita ou dividindo os custos, dependendo do motorista.
 
 ## ☕ Tecnologias
