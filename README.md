@@ -21,7 +21,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
   <tr>
     <td align="center">
       <a href="https://github.com/thalesodias">
-        <img src="https://scontent.fsjk2-1.fna.fbcdn.net/v/t1.6435-9/77074890_2774073935990183_3150602787880960000_n.jpg?_nc_cat=102&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=tJiSIwBJQLsAX-HXiTX&tn=cj49ufRkA-Aer-9Q&_nc_ht=scontent.fsjk2-1.fna&oh=6f39b8cfca3a4e66f3bdfec3c530e01a&oe=60EA1811" width="100px;"/><br>
+        <img src="https://i.imgur.com/mUQl8BE.jpg" width="100px;"/><br>
         <sub>
           <b>Thales Oliveira Dias</b>
         </sub>
